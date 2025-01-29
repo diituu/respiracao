@@ -16,5 +16,6 @@ Funcionalidades principais:
 🔞 Modo Gostoso: Para momentos mais íntimos e atrevidos.
 
 
-A cada respiração, a sua mente se torna mais leve e tranquila. 
+A cada respiração, a sua mente torna se mais leve e tranquila. 
+Made with ❤️ 
 
