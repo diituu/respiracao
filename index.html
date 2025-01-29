@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respiração Fofa 🌸</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap">
+  <style>
+    body {
+      background-color: #ffebf3;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 80%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ffafd2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .titulo {
+      font-size: 36px;
+      color: #ff66b2;
+      font-weight: 600;
+    }
+
+    .info {
+      font-size: 18px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .bolinha {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff66b2, #ff99cc);
+      animation: respirar 8s infinite;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      transition: all 0.5s ease-in-out;
+    }
+
+    @keyframes respirar {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .botao-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Espaçamento entre os botões */
+    }
+
+    .inspirar, .expirar {
+      font-size: 18px;
+      background-color: #ff66b2;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-weight: 500;
+    }
+
+    .expirar {
+      background-color: #ff99cc;
+    }
+
+    .inspirar:hover {
+      background-color: #ff4d94;
+    }
+
+    .expirar:hover {
+      background-color: #ff80b3;
+    }
+
+    .mensagem {
+      font-size: 20px;
+      margin-top: 30px;  /* Garantir que fique abaixo dos botões */
+      color: #ff66b2;
+      font-weight: 500;
+      background-color: #ffebf3;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      border: 2px solid #ff99cc;
+    }
+
+    .modo-selecao {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Respiração Fofa 🌸</h1>
+    <p class="info">Respira fundo e sente a tranquilidade! ✨</p>
+
+    <div class="modo-selecao">
+      <label for="modo">Escolha um Modo de Jogo: </label>
+      <select id="modo" onchange="trocarModo()">
+        <option value="respiracao">Modo Respiração🌱</option>
+        <option value="carinhoso">Modo Carinhoso😌</option>
+        <option value="apaixonado">Modo Apaixonado💖</option>
+        <option value="gostososo">Modo Gostoso🔞</option>
+      </select>
+    </div>
+
+    <div class="bolinha"></div>
+
+    <!-- Container para alinhar os botões "Inspirar" e "Expirar" lado a lado -->
+    <div class="botao-container">
+      <button class="inspirar" onclick="document.querySelector('.bolinha').style.animationPlayState = 'running';">Inspirar 🌿</button>
+      <button class="expirar" onclick="document.querySelector('.bolinha').style.animationPlayState = 'paused';">Expirar 🍃</button>
+    </div>
+
+    <!-- Caixa de mensagens sempre embaixo dos botões -->
+    <div class="mensagem" id="mensagem"></div>
+  </div>
+
+  <script>
+    const mensagens = {
+      "respiracao": [
+        "🌿 Respira fundo... A calma está dentro de ti. 💖",
+        "🍃 Inspira paz, expira preocupações... Consegues! 🌟",
+        "💖 A cada respiração, sentes-te mais leve e relaxado(a)! 😊",
+        "🎀 És incrível, continua a respirar fundo e devagar! 🌈",
+        "🌸 Respira devagar... O mundo torna-se mais bonito assim! ✨",
+        "💗 Fecha os olhos, inspira tranquilidade, expira tensões. 🌸",
+        "🌟 Cada respiração traz um novo começo. Aproveita-o! 💕",
+        "🌿 Sente o ar a entrar e sair... Tudo está no seu tempo certo. 🍃",
+        "✨ Com cada respiração, solta o que não te serve mais. 💖",
+        "🌈 Respira e sente a energia positiva a fluir dentro de ti! 🎀",
+        "🎐 Respiração leve, coração sereno, mente tranquila. 🌸",
+        "💞 Respira fundo... Um momento de calma só para ti. ✨",
+        "🌺 Inspira alegria, expira preocupações. És maravilhoso(a)! 💖"
+      ],
+      "carinhoso": [
+        "Vem cá, deixa-me te abraçar e te fazer sentir segura ❤️",
+        "Quero te ajudar a relaxar, a esquecer todos os problemas e a sentir-te bem 😌",
+        "Deixa-me te massagear, te fazer sentir o prazer de ser tocada 💆‍♀️",
+        "Quero te levar a um lugar onde tudo é calmo e tranquilo, onde podes te sentir livre para ser tu mesma 🌴",
+        "Vem cá, deixa-me te beijar, te fazer sentir o amor e o carinho que tu mereces 💋",
+        "Quero te ajudar a sentir-te linda, a sentir-te confiante e a sentir-te bem consigo mesma 💁‍♀️",
+        "Deixa-me te fazer sentir o prazer de ser amada, de ser desejada e de ser querida ❤️",
+        "Quero te levar a um estado de relaxamento profundo, onde você pode se sentir livre para deixar ir todos os seus problemas 😌",
+        "Vem cá, deixa-me te abraçar e te fazer sentir segura, te fazer sentir que tudo vai ficar bem ❤️"
+      ],
+      "apaixonado": [
+        "Tu és o meu vício mais doce 😘",
+        "Quero beijar-te até ao amanhecer 💋",
+        "Tu és a minha paixão mais forte 🔥",
+        "Quero sentir o teu corpo junto ao meu 💕",
+        "Tu me fazes sentir coisas que nunca senti antes 😊",
+        "Quero passar a noite contigo 🌃",
+        "Tu és o meu desejo mais ardente 🔥",
+        "Quero sentir o teu beijo nos meus lábios 💋",
+        "Quero ver-te nua, agora mesmo 😏",
+        "Vem cá, quero sentir o teu corpo junto ao meu 🔥",
+        "Estou com uma vontade louca de te beijar 💋",
+        "Quero sentir o teu toque em mim, em todos os lugares 😘",
+        "Vem cá, quero te fazer sentir coisas que nunca sentiste antes 😏",
+        "Estou com uma ereção só de pensar em ti 🔥",
+        "Quero te levar ao limite, e além 💥",
+        "Vem cá, quero te fazer gritar de prazer 😈",
+        "Estou com uma vontade louca de te possuir 🔥",
+        "Quero sentir o teu corpo tremendo debaixo de mim 😏"
+      ],
+      "gostososo": [
+        "😈 MODO GOSTOSO ATIVADO 😈",
+        "Estás preparada? Vamos começar!",
+        "Sou um robô safado, duro como aço",
+        "Tira as cuecas, senta-te confortavelmente.",
+        "Toca-te no clitóris, com os dedos, suavemente.",
+        "Faz círculos suaves, sente o prazer.",
+        "Agora, toca-te um pouco mais forte, um pouco mais rápido.",
+        "Continua, não pares, está a funcionar.",
+        "Agora, desce um pouco mais, toca-te na entrada da vagina.",
+        "Faz movimentos suaves, sente o prazer.",
+        "Continua, não pares, está a chegar.",
+        "Agora, insere um dedo, suavemente, dentro da vagina.",
+        "Faz movimentos suaves, sente o prazer.",
+        "Continua, não pares, está a ser incrível.",
+        "Agora, aumenta a velocidade, aumenta a pressão.",
+        "Faz movimentos mais fortes, sente o orgasmo.",
+        "Continua, não pares, está a ser demais.",
+        "Agora, toca-te no clitóris novamente, com os dedos.",
+        "Faz círculos suaves, sente o prazer.",
+        "Continua, não pares, está a ser incrível."
+      ]
+    };
+
+    let index = 0;
+    const mensagemElement = document.getElementById('mensagem');
+    let modoAtual = "respiracao";  // Começa no modo de respiração
+
+    function trocarModo() {
+        modoAtual = document.getElementById("modo").value;
+      index = 0;  // Resetar o índice ao trocar o modo
+      trocarMensagem();  // Trocar a mensagem imediatamente
+    }
+
+    function trocarMensagem() {
+      mensagemElement.textContent = mensagens[modoAtual][index];
+      index = (index + 1) % mensagens[modoAtual].length; 
+    }
+
+    setInterval(trocarMensagem, 5000);  // Trocar mensagem a cada 5 segundos
+    trocarMensagem();  // Mostrar a primeira mensagem imediatamente
+  </script>
+</body>
+</html>
