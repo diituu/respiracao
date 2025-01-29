@@ -8,8 +8,11 @@ Com modos divertidos e interativos, você pode personalizar sua experiência de 
 Funcionalidades principais:
 
 🌱 Modo Respiração: Respire calmamente e sinta a paz invadir o seu corpo.
+
 😌 Modo Carinhoso: Deixe-se envolver por palavras de carinho e conforto.
+
 💖 Modo Apaixonado: Mergulhe em mensagens cheias de paixão e intensidade.
+
 🔞 Modo Gostoso: Para momentos mais íntimos e atrevidos.
 
 A cada respiração, a sua mente se torna mais leve e tranquila. 
